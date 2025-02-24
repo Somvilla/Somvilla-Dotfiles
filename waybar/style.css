@@ -6,8 +6,9 @@
     letter-spacing: 0.5px;
 }
 
+
 window#waybar {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(36, 39, 58, 0.55);
     border-radius: 90px;
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -97,12 +98,17 @@ button {
 
 }
 
-.modules-right, .modules-left, .modules-center {
-    background-color: rgba(36, 39, 58, 0.85);
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+  color: #ecd3a0;
+  padding: 0 10px;
 }
 
+#custom-notification:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: @sapphire
+}
 .modules-right {
     padding: 0 10px;
 }
