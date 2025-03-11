@@ -1,7 +1,7 @@
-show=drun
+show=run
 allow_images=true
 allow_markup=true
-term=kitty
+term=kitty 
 matching=contains
 width=450
 height=470

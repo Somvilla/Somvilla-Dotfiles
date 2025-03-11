@@ -7,15 +7,15 @@
     "hyprland/workspaces",
     ],
     "modules-center": [
-	"clock",
-	"custom/notification",
+	"clock"
     ],
     "modules-right": [
+	"custom/notification",
 	"cpu",
         "memory",
         "custom/gpu",
         "custom/updates",
-	"pulseaudio",
+	"wireplumber",
         "custom/power"
     ],
     "hyprland/workspaces": {
@@ -63,14 +63,12 @@
         "tooltip-format": "{} packages can be updated",
 	"on-click": "kitty --class floating -e sudo pacman -Syu"
     },
-    "pulseaudio": {
-        "format": "  {volume}%",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": "🔇 {icon}",
-        "format-muted": "🔇",
-        "tooltip": true,
-        "tooltip-format": "Volume: {volume}%\nDevice: {desc}",
-        "on-click": "pavucontrol"
+    "wireplumber": {
+    "format": "\uf028 {volume}%",
+    "format-muted": "🔇",
+    "format-icons": ["", "", ""],
+    "on-click": "pavucontrol",
+    "tooltip": true
     },
     "custom/power": {
     "format": " <span foreground='#f38ba8'> </span> ",

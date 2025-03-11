@@ -61,11 +61,11 @@ button {
     padding: 0 10px;
 }
 
-#pulseaudio {
+#wireplumber {
     color: @maroon;
 }
 
-#pulseaudio:hover,
+#wireplumber:hover,
 #custom-updates:hover {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
