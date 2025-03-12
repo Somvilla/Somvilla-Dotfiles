@@ -74,7 +74,7 @@
     "format": " <span foreground='#f38ba8'> </span> ",
     "rotate": 0,
     "exec": "echo  ; echo  logout",
-    "on-click": "wlogout",
+    "on-click": "~/.config/hypr/scripts/power-menu.sh",
     "interval": 86400,
     "tooltip": true
     },

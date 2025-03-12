@@ -1,4 +1,4 @@
-show=run
+show=drun
 allow_images=true
 allow_markup=true
 term=kitty 
