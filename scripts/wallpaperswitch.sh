@@ -2,7 +2,7 @@
 # Path to wallpapers folder
 WALLPAPER_DIR="/home/gary/dotfiles/wallpapers"
 # Time between transitions in seconds
-interval=500  # 3 seconds
+interval=800  # 3 seconds
 
 # File to store previously displayed wallpapers
 HISTORY_FILE="/tmp/wallpaper_history.txt"
