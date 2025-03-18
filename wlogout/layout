@@ -16,21 +16,3 @@
     "text" : "Reboot",
     "keybind" : "r"
 }
-{
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
-}
-{
-    "label" : "logout",
-    "action" : "hyprctl dispatch exit",
-    "text" : "Exit",
-    "keybind" : "e"
-}
-{
-    "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
-}

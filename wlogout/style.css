@@ -61,19 +61,3 @@ Buttons
 	background-image: image(url("icons/reboot.png"));
 }
 
-#suspend {
-	background-image: image(url("icons/suspend.png"));
-}
- 
-#logout {
-	background-image: image(url("icons/logout.png"));
-}
-
-#hibernate {
-    border-radius: 0px 50px 50px 0px;
-	background-image: image(url("icons/hibernate.png"));
-}
-#hibernate:hover {
-    border-radius: 50px;
-	background-image: image(url("icons/hibernate.png"));
-}

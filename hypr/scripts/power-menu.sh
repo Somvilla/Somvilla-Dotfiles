@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wlogout -b 6
+wlogout -b 3
