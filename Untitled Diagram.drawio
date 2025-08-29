@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" version="28.1.2">
+  <diagram name="Page-1" id="YwQQgDa3emxMNJekddqj">
+    <mxGraphModel dx="827" dy="538" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="02yKEAh83jBKNZMvPGnc-2" value="BT HUB&lt;br&gt;192.168.1.0/24" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="02yKEAh83jBKNZMvPGnc-3" value="OPNSense&lt;br&gt;&lt;br&gt;WAN: 192.168.1.249&lt;br&gt;VLAN10: 10.10.10.1&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="50" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="02yKEAh83jBKNZMvPGnc-5" value="VLAN 10 - Infra&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="60" width="200" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="02yKEAh83jBKNZMvPGnc-6" value="NGINX (10.10.10.2)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="02yKEAh83jBKNZMvPGnc-5">
+          <mxGeometry x="40" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="02yKEAh83jBKNZMvPGnc-7" value="Sonarr (10.10.10.3)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="02yKEAh83jBKNZMvPGnc-5">
+          <mxGeometry x="40" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="02yKEAh83jBKNZMvPGnc-8" value="Radarr (10.10.10.4" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="02yKEAh83jBKNZMvPGnc-5">
+          <mxGeometry x="40" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
