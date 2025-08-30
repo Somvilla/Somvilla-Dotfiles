@@ -374,7 +374,7 @@
           <mxGeometry x="50" y="15" width="60" height="50" as="geometry" />
         </mxCell>
         <object label="VLAN50 - Sandbox (10.50.50.1)&amp;nbsp;" placeholders="1" subnet="10.50.50." id="CJNbvoDMB4cZCmzuY-xy-3">
-          <mxCell style="swimlane;whiteSpace=wrap;html=1;rounded=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;swimlaneFillColor=default;" parent="1" vertex="1">
+          <mxCell style="swimlane;whiteSpace=wrap;html=1;rounded=1;collapsible=0;fillColor=#FF9933;strokeColor=#666666;gradientColor=#b3b3b3;swimlaneFillColor=default;" parent="1" vertex="1">
             <mxGeometry x="1040" y="897.5" width="640" height="140" as="geometry" />
           </mxCell>
         </object>
