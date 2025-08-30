@@ -30,37 +30,39 @@
             <mxGeometry x="40" y="750" width="700" height="130" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="CJNbvoDMB4cZCmzuY-xy-39" value="" style="group" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1" connectable="0">
-          <mxGeometry x="102.73142857142855" y="30.00199584200743" width="494.5435714285715" height="35.68564738616655" as="geometry" />
-        </mxCell>
         <object label="&lt;div&gt;Living Room TV&lt;/div&gt;&lt;div&gt;%subnet%.x&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-73">
-          <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.firetv;" parent="CJNbvoDMB4cZCmzuY-xy-39" vertex="1">
-            <mxGeometry x="448.3928571428573" y="2.3080041579926274" width="46.15071428571429" height="32.54464285714286" as="geometry" />
+          <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.firetv;" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1">
+            <mxGeometry x="551.1242857142859" y="32.31000000000006" width="46.15071428571429" height="32.54464285714286" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;Bedroom TV&lt;/div&gt;&lt;div&gt;%subnet%.x&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-71">
-          <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.firetv;" parent="CJNbvoDMB4cZCmzuY-xy-39" vertex="1">
-            <mxGeometry x="361.60714285714283" y="0.1880041579927365" width="48.08892857142857" height="33.90428571428571" as="geometry" />
+          <mxCell style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.firetv;" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1">
+            <mxGeometry x="464.3385714285714" y="30.19000000000017" width="48.08892857142857" height="33.90428571428571" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;IOS&lt;/div&gt;&lt;div&gt;%subnet%.x&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-55">
-          <mxCell style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.mobile" parent="CJNbvoDMB4cZCmzuY-xy-39" vertex="1">
-            <mxGeometry x="294.10714285714283" y="1.419119346141315" width="23.986569628017662" height="34.266528040025236" as="geometry" />
+          <mxCell style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.mobile" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1">
+            <mxGeometry x="396.8385714285714" y="31.421115188148747" width="23.986569628017662" height="34.266528040025236" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;Android&lt;/div&gt;&lt;div&gt;%subnet%.x&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-54">
-          <mxCell style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.android_phone" parent="CJNbvoDMB4cZCmzuY-xy-39" vertex="1">
-            <mxGeometry x="207.3214285714286" width="20.559916824015144" height="34.266528040025236" as="geometry" />
+          <mxCell style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.android_phone" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1">
+            <mxGeometry x="320.0028571428572" y="34.16199584200743" width="20.559916824015144" height="34.266528040025236" as="geometry" />
           </mxCell>
         </object>
         <object label="Brooke&lt;br&gt;%subnet%.x" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-81">
-          <mxCell style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VM_Windows_Non_Azure.svg;" parent="CJNbvoDMB4cZCmzuY-xy-39" vertex="1">
-            <mxGeometry x="106.07142857142861" y="2.839399382897227" width="34.266528040025236" height="31.52520579682322" as="geometry" />
+          <mxCell style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VM_Windows_Non_Azure.svg;" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1">
+            <mxGeometry x="140.00285714285718" y="34.16139522490466" width="34.266528040025236" height="31.52520579682322" as="geometry" />
           </mxCell>
         </object>
         <object label="Archie&lt;br&gt;%subnet%.166" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-80">
-          <mxCell style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VM_Linux.svg;" parent="CJNbvoDMB4cZCmzuY-xy-39" vertex="1">
-            <mxGeometry y="2.839399382897227" width="34.266528040025236" height="31.52520579682322" as="geometry" />
+          <mxCell style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VM_Linux.svg;" parent="qBCkmrOF__fB7yVJp3Rr-79" vertex="1">
+            <mxGeometry x="60.001428571428555" y="34.16139522490466" width="34.266528040025236" height="31.52520579682322" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Mac %subnet%x" placeholders="1" id="kyZzKkCnzPRXWl6qujbp-225">
+          <mxCell style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.mac_client;" vertex="1" parent="qBCkmrOF__fB7yVJp3Rr-79">
+            <mxGeometry x="210" y="34.15999999999997" width="58" height="48" as="geometry" />
           </mxCell>
         </object>
         <mxCell id="kyZzKkCnzPRXWl6qujbp-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;strokeColor=light-dark(#000000,#FF0000);" edge="1" parent="1" source="qBCkmrOF__fB7yVJp3Rr-59">
