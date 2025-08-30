@@ -156,7 +156,7 @@
             <mxGeometry x="40" y="150" width="120" height="60" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;div&gt;101-Cloudflare&lt;/div&gt;&lt;div&gt;(%subnet%.5)&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-8">
+        <object label="&lt;div&gt;101-Cloudflare&lt;/div&gt;&lt;div&gt;(%subnet%5)&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-8">
           <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#E51400,#CC0000);strokeColor=#B20000;fontColor=#ffffff;" parent="qBCkmrOF__fB7yVJp3Rr-3" vertex="1">
             <mxGeometry x="40" y="210" width="120" height="60" as="geometry" />
           </mxCell>
@@ -284,7 +284,7 @@
         <mxCell id="CJNbvoDMB4cZCmzuY-xy-4" value="" style="ellipse;whiteSpace=wrap;html=1;container=1;collapsible=0;" vertex="1" parent="1">
           <mxGeometry x="460" y="70" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="qBCkmrOF__fB7yVJp3Rr-68" value="&lt;div&gt;Proxmox&lt;/div&gt;&lt;div&gt;192.168.1.232:8006&lt;/div&gt;" style="image;html=1;image=img/lib/clip_art/computers/Server_128x128.png" parent="CJNbvoDMB4cZCmzuY-xy-4" vertex="1">
+        <mxCell id="qBCkmrOF__fB7yVJp3Rr-68" value="&lt;div&gt;Proxmox&lt;/div&gt;&lt;div&gt;(192.168.1.232:8006)&lt;/div&gt;" style="image;html=1;image=img/lib/clip_art/computers/Server_128x128.png" parent="CJNbvoDMB4cZCmzuY-xy-4" vertex="1">
           <mxGeometry x="55.895714285714256" y="10" width="48.214285714285715" height="48.48" as="geometry" />
         </mxCell>
         <mxCell id="CJNbvoDMB4cZCmzuY-xy-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=light-dark(#000000,#FF0000);" edge="1" parent="1" source="qBCkmrOF__fB7yVJp3Rr-10" target="qBCkmrOF__fB7yVJp3Rr-76">
