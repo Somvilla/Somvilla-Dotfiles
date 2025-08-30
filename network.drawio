@@ -299,6 +299,9 @@
         <mxCell id="CJNbvoDMB4cZCmzuY-xy-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.013;entryY=0.433;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="qBCkmrOF__fB7yVJp3Rr-61" target="qBCkmrOF__fB7yVJp3Rr-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="CJNbvoDMB4cZCmzuY-xy-46" value="Somvilla&amp;nbsp; Home Lab" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="740" y="20" width="220" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
