@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" version="28.1.2">
   <diagram name="Page-1" id="2l_jHQsMw_nlB7P-kN3d">
-    <mxGraphModel dx="1414" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2020" dy="1097" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -154,7 +154,7 @@
             <mxGeometry x="40" y="450" width="120" height="60" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;div&gt;125-Qbittorrent&lt;/div&gt;&lt;div&gt;(%subnet%9)&lt;/div&gt;&lt;div&gt;Port:&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-38">
+        <object label="&lt;div&gt;125-Qbittorrent&lt;/div&gt;&lt;div&gt;(%subnet%9)&lt;/div&gt;&lt;div&gt;Port:&amp;nbsp;&lt;span class=&quot;_97w2Z3njlMm7Og_zyqu4&quot;&gt;8080&lt;/span&gt;&lt;/div&gt;" placeholders="1" id="qBCkmrOF__fB7yVJp3Rr-38">
           <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;gradientColor=#d5739d;fontStyle=1" parent="qBCkmrOF__fB7yVJp3Rr-13" vertex="1">
             <mxGeometry x="40" y="510" width="120" height="60" as="geometry" />
           </mxCell>
@@ -215,6 +215,14 @@
             <Array as="points">
               <mxPoint x="970" y="545" />
               <mxPoint x="970" y="968" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-FFX6FsGWwvrQuwG8x9h-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qBCkmrOF__fB7yVJp3Rr-2" target="qBCkmrOF__fB7yVJp3Rr-59">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="900" />
+              <mxPoint x="247" y="900" />
             </Array>
           </mxGeometry>
         </mxCell>
