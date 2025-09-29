@@ -26,17 +26,17 @@
             "6": "\uf120", //terminal
             "7": "\uf121", //code
             "18": "\uf001", //music
-            "17": "\uf392", //discord
+            "17": "󰙯", //discord
             "16": "\uf232", //whatsapp
             "8": "\uf1b6", //steam
-            "9": "\uf835", //battle net
+            "9": "󰣕", //battle net
             "19": "\uf0e0", //mail
             "10": "\uf249" //obsidian
         },
         "sort-by-number": false,
         "persistent-workspaces": {
             "DP-3": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "HDMI-A-1": [11, 12, 13, 14, 15, 16, 17 , 18, 19,20] 
+            "HDMI-A-1": [11, 12, 13, 14, 15, 16, 17 , 18, 19] 
         }
     },
     "clock": {
