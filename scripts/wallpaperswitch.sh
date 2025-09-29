@@ -1,4 +1,9 @@
 #!/bin/bash
+# Wait for swww to be fully initialized
+while ! swww query &>/dev/null; do
+    echo "Waiting for swww to initialize..."
+    sleep 1
+done
 # Path to wallpapers folder
 WALLPAPER_DIR="/home/gary/dotfiles/wallpapers"
 # Time between transitions in seconds

@@ -28,40 +28,19 @@ bind = $mainMod, N, exec, swaync-client -t
 
 # ----- Workspace mapping (letters -> numbers) -----
 $WS_MAIN=1
-$WS_MAIN2=2
-$WS_MAIN3=3
-$WS_MAIN4=4
-$WS_MAIN5=5
-$WS_TERMINAL=6
-$WS_CODE=7
-$WS_STEAM=8
-$WS_BNET=9
+$WS_CODE=2
+$WS_WEB=3
+$WS_MUSIC=4
+$WS_DISCORD=5
+$WS_WHATSAPP=6
+$WS_STEAM=7
+$WS_BNET=8
+$WS_MAIL=9
 $WS_OBSIDIAN=10
 
-# ---- Second Monitor
-$WS_SECOND=11
-$WS_SECOND2=12
-$WS_SECOND3=13
-$WS_SECOND4=14
-$WS_SECOND5=15
-$WS_WHATSAPP=16
-$WS_DISCORD=17
-$WS_MUSIC=18
-$WS_MAIL=19
-$WS_SECOND20=20
 # ----- Jump to workspaces (Super + letter) -----
-bind = $mainMod, T, workspace, $WS_TERMINAL
+bind = $mainMod, T, workspace, $WS_MAIN
 bind = $mainMod, A, workspace, $WS_MAIN
-bind = $mainMod, 1, workspace, $WS_MAIN
-bind = $mainMod, 2, workspace, $WS_MAIN2
-bind = $mainMod, 3, workspace, $WS_MAIN3
-bind = $mainMod, 4, workspace, $WS_MAIN4
-bind = $mainMod, 5, workspace, $WS_MAIN5
-bind = $mainMod, 6, workspace, $WS_SECOND
-bind = $mainMod, 7, workspace, $WS_SECOND2
-bind = $mainMod, 8, workspace, $WS_SECOND3
-bind = $mainMod, 9, workspace, $WS_SECOND4
-bind = $mainMod, 0, workspace, $WS_SECOND5
 bind = $mainMod, C, workspace, $WS_CODE
 bind = $mainMod, F, workspace, $WS_WEB
 bind = $mainMod, Q, workspace, $WS_WEB
@@ -73,13 +52,9 @@ bind = $mainMod, B, workspace, $WS_BNET
 bind = $mainMod, P, workspace, $WS_MAIL
 bind = $mainMod, O, workspace, $WS_OBSIDIAN
 
-bind = $mainMod, 2, workspace, 2 
 # ----- Send window (stay on current desk): Super + Alt + letter -----
-bind = $mainMod $altMod, T, movetoworkspace, $WS_TERMINAL
+bind = $mainMod $altMod, T, movetoworkspace, $WS_MAIN
 bind = $mainMod $altMod, A, movetoworkspace, $WS_MAIN
-bind = $mainMod $altMod, 1, movetoworkspace, $WS_MAIN
-bind = $mainMod $altMod, 2, movetoworkspace, 2
-bind = $mainMod $altMod, 3, movetoworkspace, 3
 bind = $mainMod $altMod, C, movetoworkspace, $WS_CODE
 bind = $mainMod $altMod, F, movetoworkspace, $WS_WEB
 bind = $mainMod $altMod, Q, movetoworkspace, $WS_WEB
@@ -92,11 +67,8 @@ bind = $mainMod $altMod, P, movetoworkspace, $WS_MAIL
 bind = $mainMod $altMod, O, movetoworkspace, $WS_OBSIDIAN
 
 # ----- Send + follow (one key does both): Super + Shift + letter -----
-bind = $mainMod SHIFT, T, exec, hyprctl dispatch movetoworkspace $WS_TERMINAL;     hyprctl dispatch workspace $WS_TERMINAL
+bind = $mainMod SHIFT, T, exec, hyprctl dispatch movetoworkspace $WS_MAIN;     hyprctl dispatch workspace $WS_MAIN
 bind = $mainMod SHIFT, A, exec, hyprctl dispatch movetoworkspace $WS_MAIN;     hyprctl dispatch workspace $WS_MAIN
-bind = $mainMod SHIFT, 1, exec, hyprctl dispatch movetoworkspace $WS_MAIN;     hyprctl dispatch workspace $WS_MAIN
-bind = $mainMod SHIFT, 2, exec, hyprctl dispatch movetoworkspace 2;	       hyprctl dispatch workspace $WS_MAIN
-bind = $mainMod SHIFT, 3, exec, hyprctl dispatch movetoworkspace 3;	       hyprctl dispatch workspace $WS_MAIN
 bind = $mainMod SHIFT, C, exec, hyprctl dispatch movetoworkspace $WS_CODE;     hyprctl dispatch workspace $WS_CODE
 bind = $mainMod SHIFT, F, exec, hyprctl dispatch movetoworkspace $WS_WEB;      hyprctl dispatch workspace $WS_WEB
 bind = $mainMod SHIFT, Q, exec, hyprctl dispatch movetoworkspace $WS_WEB;      hyprctl dispatch workspace $WS_WEB
