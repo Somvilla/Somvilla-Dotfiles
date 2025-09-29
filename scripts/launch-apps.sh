@@ -1,4 +1,4 @@
-sda#!/bin/bash
+#!/bin/bash
 #hyprctl dispatch exec [workspace 4 silent] firefox
 hyprctl dispatch exec [workspace 17 silent] discord
 #hyprctl dispatch exec [workspace 8 silent] env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1

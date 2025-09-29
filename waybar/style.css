@@ -106,6 +106,18 @@ button {
   border-radius: 6px;
   color: @sapphire
 }
+
+#custom-wireguard {
+    padding: 0 12px;
+}
+
+#custom-wireguard.wireguard.connected {
+    color: @green;
+}
+
+#custom-wireguard.wireguard.disconnected {
+    color: @red;
+}
 .modules-right {
     padding: 0 10px;
 }
