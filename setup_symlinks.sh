@@ -97,6 +97,10 @@ mkdir -p ~/.config/btop
 ln -sf "$DOTFILES_DIR/btop/btop.conf" ~/.config/btop/btop.conf
 ln -sf "$DOTFILES_DIR/btop/btop.log" ~/.config/btop/btop.log
 
+# Pavucontrol
+echo "Setting up pavucontrol config..."
+ln -sf "$DOTFILES_DIR/pavucontrol.ini" ~/.config/pavucontrol.ini
+
 # Nemo
 echo "Setting up nemo config..."
 mkdir -p ~/.config/nemo
