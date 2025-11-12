@@ -91,6 +91,12 @@ ln -sf "$DOTFILES_DIR/cava/config" ~/.config/cava/config
 mkdir -p ~/.config/cava/shaders
 ln -sf "$DOTFILES_DIR/cava/shaders/"* ~/.config/cava/shaders/
 
+# Btop
+echo "Setting up btop config..."
+mkdir -p ~/.config/btop
+ln -sf "$DOTFILES_DIR/btop/btop.conf" ~/.config/btop/btop.conf
+ln -sf "$DOTFILES_DIR/btop/btop.log" ~/.config/btop/btop.log
+
 # Nemo
 echo "Setting up nemo config..."
 mkdir -p ~/.config/nemo
