@@ -14,7 +14,7 @@ A collection of my personal Linux dotfiles for Hyprland and related tools. Easil
    ```bash
    ./install.sh
    ```
-   This installs required packages and sets up symlinks.
+   This backs up existing configs, installs packages (including OpenCode via curl), and sets up symlinks.
 
 3. **Reboot**:
    ```bash
@@ -76,7 +76,17 @@ If you prefer not to use the install script:
 ## Troubleshooting
 
 - If symlinks fail, check if target files exist
-- For Hyprland issues, check `hyprland.conf` syntax
+- For Hyprland issues, check `hyprland.conf` syntax and run `journalctl -xe`
 - Missing packages? Add to `install.sh`
+- OpenCode install fails? Check internet and run `curl -fsSL https://opencode.ai/install | bash` manually
+- Restore backups: Configs are backed up to `~/config_backup`
+
+## VM Testing
+
+To test on a fresh Arch VM:
+1. Install base Arch: `pacman -S git`
+2. Clone: `git clone <your-repo-url> ~/dotfiles`
+3. Run: `cd ~/dotfiles && ./install.sh`
+4. Reboot and verify Hyprland starts
 
 Enjoy your customized Hyprland setup!
