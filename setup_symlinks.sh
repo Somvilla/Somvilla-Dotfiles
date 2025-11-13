@@ -125,5 +125,9 @@ ln -sf "$DOTFILES_DIR/scripts/globalcontrol.sh" ~/.local/bin/globalcontrol
 ln -sf "$DOTFILES_DIR/scripts/launchlogout.sh" ~/.local/bin/launchlogout
 ln -sf "$DOTFILES_DIR/scripts/wallpaperswitch.sh" ~/.local/bin/wallpaperswitch
 
+# Bashrc
+echo "Setting up bashrc..."
+ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
+
 echo "Symlinks created successfully!"
 echo "You may need to reload your window manager or logout/login for changes to take effect."
