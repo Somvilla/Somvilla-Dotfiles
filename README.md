@@ -39,6 +39,7 @@ A collection of my personal Linux dotfiles for Hyprland and related tools. Easil
 - **Scripts**: Automation scripts for wallpapers, global control, etc.
 - **Wallpapers**: Custom background images
 - **Other**: Pavucontrol settings, btop config, bashrc
+- **Gaming**: AMD GPU support with Proton, MangoHud, Lutris, Wine, DXVK
 
 ## Manual Setup
 
