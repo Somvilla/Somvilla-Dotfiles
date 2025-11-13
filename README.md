@@ -58,8 +58,8 @@ If you prefer not to use the install script:
 
 - **OS**: Arch Linux or EndeavourOS
 - **Package Manager**: pacman
-- **Required Packages**: See `install.sh` for the full list
-- **Optional**: AUR packages like `yay` (included in repo)
+- **Required Packages**: See `install.sh` for the full list (includes yay AUR helper and dev tools like git, nodejs, npm, python)
+- **Optional**: Additional AUR packages can be installed with yay
 
 ## Customization
 
