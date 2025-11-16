@@ -1,22 +1,27 @@
 # Somvilla-Dotfiles
 
-A collection of my personal Linux dotfiles for Hyprland and related tools. Easily restore your setup on a fresh Arch/EndeavourOS install.
+A collection of my personal Linux dotfiles for Hyprland and related tools. Uses GNU Stow for clean, maintainable configuration management. Easily restore your setup on a fresh Arch/EndeavourOS install.
 
 ## Quick Start
 
-1. **Clone the repo**:
+1. **Install GNU Stow**:
+   ```bash
+   sudo pacman -S stow
+   ```
+
+2. **Clone the repo**:
    ```bash
    git clone <your-repo-url> ~/dotfiles
    cd ~/dotfiles
    ```
 
-2. **Run the installer**:
+3. **Run the stow setup**:
    ```bash
-   ./install.sh
+   ./setup_stow.sh
    ```
-   This backs up existing configs, installs packages (including OpenCode via curl), and sets up symlinks.
+   This backs up existing configs and creates symlinks using GNU Stow.
 
-3. **Reboot**:
+4. **Reboot**:
    ```bash
    sudo reboot
    ```
@@ -41,18 +46,37 @@ A collection of my personal Linux dotfiles for Hyprland and related tools. Easil
 - **Other**: Pavucontrol settings, btop config, bashrc
 - **Gaming**: AMD GPU support with Proton, MangoHud, Lutris, Wine, DXVK
 
+## Stow Workflow
+
+This repository uses GNU Stow for configuration management:
+
+### Basic Usage
+- **Edit configs**: Modify files in `~/dotfiles/.config/`
+- **Deploy changes**: Run `stow <package>` (e.g., `stow kitty`)
+- **Update all**: `stow */` deploys all packages
+- **Remove package**: `stow -D <package>` unstows a package
+
+### Adding New Configs
+1. Create directory: `mkdir ~/dotfiles/.config/newapp`
+2. Add config files to that directory
+3. Deploy: `stow newapp`
+
+### Package List
+- `btop`, `cava`, `fish`, `gtk-3.0`, `gtk-4.0`, `hypr`, `kitty`, `nemo`, `nvim`, `rofi`, `swaync`, `waybar`, `wlogout`, `wofi`
+- `scripts` (deploys to `~/.local/bin`)
+
 ## Manual Setup
 
-If you prefer not to use the install script:
+If you prefer manual setup:
 
-1. Install packages manually:
+1. Install GNU Stow and required packages:
    ```bash
-   sudo pacman -S hyprland waybar kitty fish starship rofi nemo nvim cava swaync wlogout wofi gtk3 gtk4 pavucontrol btop opencode ollama
+   sudo pacman -S stow hyprland waybar kitty fish starship rofi nemo nvim cava swaync wlogout wofi gtk3 gtk4 pavucontrol btop opencode ollama
    ```
 
-2. Run the symlink script:
+2. Run the stow setup script:
    ```bash
-   ./setup_symlinks.sh
+   ./setup_stow.sh
    ```
 
 ## Dependencies
@@ -64,30 +88,34 @@ If you prefer not to use the install script:
 
 ## Customization
 
-- Edit configs in `~/.config` (they're symlinked here)
-- Add new configs: Backup to dotfiles, update `setup_symlinks.sh`
-- Test changes: `hyprctl reload` for Hyprland
+- **Edit configs in `~/dotfiles/.config/`** (this is the source of truth)
+- **Deploy changes**: Run `stow <package>` after editing (e.g., `stow kitty`)
+- **Add new configs**: Create directory in `~/dotfiles/.config/`, then run `stow <new-package>`
+- **Test changes**: `hyprctl reload` for Hyprland
 
 ## Notes
 
-- Symlinks are created from `~/dotfiles` to `~/.config`
+- Configurations are managed using GNU Stow - edit in `~/dotfiles/.config/`, deploy with `stow <package>`
 - Sensitive data (API keys, etc.) should be in a separate `secrets/` dir (ignored by git)
 - Commit changes regularly: `git add . && git commit -m "Update"`
+- To update all configs: `stow */` (from dotfiles directory)
 
 ## Troubleshooting
 
-- If symlinks fail, check if target files exist
-- For Hyprland issues, check `hyprland.conf` syntax and run `journalctl -xe`
-- Missing packages? Add to `install.sh`
-- OpenCode install fails? Check internet and run `curl -fsSL https://opencode.ai/install | bash` manually
-- Restore backups: Configs are backed up to `~/config_backup`
+- **Stow conflicts**: If stow reports conflicts, existing files may need to be removed first
+- **Stow not found**: Install with `sudo pacman -S stow`
+- **Config not loading**: Run `stow <package>` after editing configs
+- **Hyprland issues**: Check `hyprland.conf` syntax and run `journalctl -xe`
+- **Missing packages**: Add to package installation commands
+- **OpenCode install fails**: Check internet and run `curl -fsSL https://opencode.ai/install | bash` manually
+- **Restore backups**: Configs are backed up to `~/config_backup_*` directories
 
 ## VM Testing
 
 To test on a fresh Arch VM:
-1. Install base Arch: `pacman -S git`
+1. Install base packages: `pacman -S git stow`
 2. Clone: `git clone <your-repo-url> ~/dotfiles`
-3. Run: `cd ~/dotfiles && ./install.sh`
+3. Run: `cd ~/dotfiles && ./setup_stow.sh`
 4. Reboot and verify Hyprland starts
 
 Enjoy your customized Hyprland setup!
