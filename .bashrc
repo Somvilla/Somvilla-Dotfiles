@@ -16,6 +16,9 @@ export PATH="$HOME/dotfiles/scripts:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
 export CHROME_EXECUTABLE=chromium
 
+# wezterm theme
+export WEZTERM_THEME=nord
+
 # opencode
 export PATH=/home/gary/.opencode/bin:$PATH
 
@@ -62,5 +65,6 @@ alias rm='rm -iv'
 
 # Common typos
 alias cls='clear'
+alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
