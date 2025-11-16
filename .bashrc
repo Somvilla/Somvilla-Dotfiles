@@ -33,9 +33,11 @@ alias nrb='npm run build'
 alias nrt='npm run test'
 
 # Git shortcuts
+alias gi='git init'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
+alias gcf='git commit -m "Initial commit"'
 alias gp='git push'
 alias gl='git log --oneline --graph --decorate --all'
 
