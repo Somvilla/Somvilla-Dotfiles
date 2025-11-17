@@ -1,0 +1,128 @@
+{
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height": 42,
+    "modules-left": [
+    "hyprland/workspaces"
+    ],
+    "modules-center": [
+	"clock"
+    ],
+    "modules-right": [
+ 	"custom/theme",
+ 	"custom/notification",
+         "custom/wireguard",
+ 	"cpu",
+         "memory",
+         "custom/gpu",
+         "custom/updates",
+ 	"wireplumber",
+         "custom/power"
+     ],
+    "hyprland/workspaces": {
+        "format": "{icon} ",
+        "on-click": "activate",
+        "format-icons": {
+            "6": "\uf120", //terminal
+            "7": "\uf121", //code
+            "18": "\uf001", //music
+            "17": "󰙯", //discord
+            "16": "\uf232", //whatsapp
+            "8": "\uf1b6", //steam
+            "9": "\uf11b", //gaming
+            "19": "\uf0e0", //mail
+            "10": "\uf249" //obsidian
+        },
+        "sort-by-number": false,
+        "persistent-workspaces": {
+            "DP-3": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "HDMI-A-1": [11, 12, 13, 14, 15, 16, 17 , 18, 19] 
+        }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "interval": 1,
+        "tooltip-format": "CPU Usage:\n{usage}% across all cores\n\nCPU: 5800x3d"
+    },
+    "memory": {
+        "format": "\uefc5 {percentage}%",
+        "tooltip": true,
+        "interval": 1,
+        "tooltip-format": "RAM Usage:\nUsed: {used:0.1f}GB\nTotal: {total:0.1f}GB\nFree: {avail:0.1f}GB"
+    },
+    "custom/gpu": {
+        "exec": "radeontop -d- -l1 | grep -o 'gpu [0-9]\\+' | awk '{print $2}'",
+        "format": "\udb80\ude97 {}%",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "GPU: 6800XT\nGPU Usage: {}%"
+    },
+    "custom/updates": {
+        "exec": "checkupdates | wc -l",
+        "interval": 10,
+        "format": "\udb81\udeb0 {}",
+        "tooltip": true,
+        "tooltip-format": "{} packages can be updated",
+	"on-click": "kitty --class floating -e sudo pacman -Syu"
+    },
+    "wireplumber": {
+    "format": "\uf028 {volume}%",
+    "format-muted": "🔇",
+    "format-icons": ["", "", ""],
+    "on-click": "pavucontrol",
+    "tooltip": true
+    },
+    "custom/power": {
+    "format": " <span foreground='#f38ba8'> </span> ",
+    "rotate": 0,
+    "exec": "echo  ; echo  logout",
+    "on-click": "~/.config/hypr/scripts/power-menu.sh",
+    "interval": 86400,
+    "tooltip": true
+    },
+    "custom/wireguard": {
+        "exec": "~/.config/waybar/scripts/wireguard.sh",
+        "return-type": "json",
+        "interval": 5,
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/wireguard.sh toggle",
+        "tooltip": true
+    },
+   "custom/theme": {
+     "format": "🎨 {}",
+     "exec": "/home/gary/dotfiles/scripts/wallpaper-toggle.sh status | head -1 | cut -d'(' -f2 | cut -d')' -f1",
+     "interval": 2,
+     "on-click": "/home/gary/dotfiles/scripts/wallpaper-toggle.sh toggle",
+     "on-click-right": "/home/gary/dotfiles/scripts/wallpaper-toggle.sh prev",
+     "tooltip": true,
+     "tooltip-format": "Current Theme\nLeft click: Next theme\nRight click: Previous theme"
+   },
+   "custom/notification": {
+     "tooltip": false,
+     "format": "{icon}",
+     "format-icons": {
+       "notification": "<span foreground='red'><sup></sup></span>",
+       "none": "",
+       "dnd-notification": "<span foreground='red'><sup></sup></span>",
+       "dnd-none": "",
+       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+       "inhibited-none": "",
+       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+       "dnd-inhibited-none": ""
+     },
+     "return-type": "json",
+     "exec-if": "which swaync-client",
+     "exec": "swaync-client -swb",
+     "on-click": "swaync-client -t -sw",
+     "on-click-right": "swaync-client -d -sw",
+     "escape": true
+   }
+
+
+}

@@ -1,0 +1,87 @@
+{
+  "themes": {
+    "nord": {
+      "name": "Nord",
+      "wezterm": "nord",
+      "gtk": "Nordic",
+      "waybar": "nord",
+      "starship": "nord",
+      "kitty": "Nord"
+    },
+    "catppuccin-mocha": {
+      "name": "Catppuccin Mocha",
+      "wezterm": "catppuccin",
+      "gtk": "Catppuccin-Mocha-Standard-Blue-Dark",
+      "waybar": "catppuccin-mocha",
+      "starship": "catppuccin_mocha",
+      "kitty": "Catppuccin Mocha"
+    },
+    "catppuccin-macchiato": {
+      "name": "Catppuccin Macchiato",
+      "wezterm": "catppuccin",
+      "gtk": "Catppuccin-Macchiato-Standard-Blue-Dark",
+      "waybar": "catppuccin-macchiato",
+      "starship": "catppuccin_mocha",
+      "kitty": "Catppuccin Macchiato"
+    },
+    "catppuccin-frappe": {
+      "name": "Catppuccin Frappe",
+      "wezterm": "catppuccin",
+      "gtk": "Catppuccin-Frappe-Standard-Blue-Dark",
+      "waybar": "catppuccin-frappe",
+      "starship": "catppuccin_frappe",
+      "kitty": "Catppuccin Frappe"
+    },
+    "catppuccin-latte": {
+      "name": "Catppuccin Latte",
+      "wezterm": "catppuccin",
+      "gtk": "Catppuccin-Latte-Standard-Blue-Light",
+      "waybar": "catppuccin-latte",
+      "starship": "catppuccin_latte",
+      "kitty": "Catppuccin Latte"
+    },
+    "gruvbox": {
+      "name": "Gruvbox",
+      "wezterm": "onedark",
+      "gtk": "Gruvbox-Dark",
+      "waybar": "gruvbox",
+      "starship": "gruvbox_dark",
+      "kitty": "Gruvbox Dark"
+    },
+    "tokyo-night": {
+      "name": "Tokyo Night",
+      "wezterm": "tokyo-night",
+      "gtk": "Tokyonight-Dark",
+      "waybar": "tokyo-night",
+      "starship": "tokyo-night",
+      "kitty": "Tokyo Night"
+    },
+    "dracula": {
+      "name": "Dracula",
+      "wezterm": "dracula",
+      "gtk": "Dracula",
+      "waybar": "dracula",
+      "starship": "dracula",
+      "kitty": "Dracula"
+    },
+    "everforest": {
+      "name": "Everforest",
+      "wezterm": "everforest",
+      "gtk": "Everforest-Dark",
+      "waybar": "everforest",
+      "starship": "everforest",
+      "kitty": "Everforest Dark"
+    }
+  },
+  "wallpaper_themes": {
+    "winter-is-coming-1.png": "nord",
+    "winter-is-coming-2.png": "catppuccin-mocha",
+    "City-Night.png": "catppuccin-macchiato",
+    "City-Rainy-Night.png": "gruvbox",
+    "Clearnight.jpg": "nord",
+    "Cloudsnight.jpg": "catppuccin-mocha",
+    "dragon.png": "gruvbox",
+    "Fantasy-Lanscape-Night.png": "catppuccin-macchiato",
+    "Neon_Cities_4-C0750.jpg": "catppuccin-mocha"
+  }
+}
