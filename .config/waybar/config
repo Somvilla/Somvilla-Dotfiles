@@ -10,15 +10,16 @@
 	"clock"
     ],
     "modules-right": [
-	"custom/notification",
-        "custom/wireguard",
-	"cpu",
-        "memory",
-        "custom/gpu",
-        "custom/updates",
-	"wireplumber",
-        "custom/power"
-    ],
+ 	"custom/theme",
+ 	"custom/notification",
+         "custom/wireguard",
+ 	"cpu",
+         "memory",
+         "custom/gpu",
+         "custom/updates",
+ 	"wireplumber",
+         "custom/power"
+     ],
     "hyprland/workspaces": {
         "format": "{icon} ",
         "on-click": "activate",
@@ -93,26 +94,35 @@
         "on-click": "~/.config/waybar/scripts/wireguard.sh toggle",
         "tooltip": true
     },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
+   "custom/theme": {
+     "format": "🎨 {}",
+     "exec": "/home/gary/dotfiles/scripts/wallpaper-toggle.sh status | head -1 | cut -d'(' -f2 | cut -d')' -f1",
+     "interval": 30,
+     "on-click": "/home/gary/dotfiles/scripts/wallpaper-toggle.sh toggle",
+     "on-click-right": "/home/gary/dotfiles/scripts/wallpaper-toggle.sh prev",
+     "tooltip": true,
+     "tooltip-format": "Current Theme\nLeft click: Next theme\nRight click: Previous theme"
+   },
+   "custom/notification": {
+     "tooltip": false,
+     "format": "{icon}",
+     "format-icons": {
+       "notification": "<span foreground='red'><sup></sup></span>",
+       "none": "",
+       "dnd-notification": "<span foreground='red'><sup></sup></span>",
+       "dnd-none": "",
+       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+       "inhibited-none": "",
+       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+       "dnd-inhibited-none": ""
+     },
+     "return-type": "json",
+     "exec-if": "which swaync-client",
+     "exec": "swaync-client -swb",
+     "on-click": "swaync-client -t -sw",
+     "on-click-right": "swaync-client -d -sw",
+     "escape": true
+   }
 
 
 }
