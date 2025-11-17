@@ -10,19 +10,50 @@ This system replaces the old automatic wallpaper switching with a manual toggle 
 - **Waybar Integration**: Click the theme indicator in Waybar to toggle themes
 - **State Persistence**: Remembers your current theme across sessions
 
-## Current Wallpaper-Theme Mappings
+## Organized Wallpaper Folders
 
-| Wallpaper | Theme | Description |
-|-----------|-------|-------------|
-| `winter-is-coming-1.png` | Nord | Cool blue theme |
-| `winter-is-coming-2.png` | Catppuccin Mocha | Warm mocha theme |
-| `City-Night.png` | Catppuccin Macchiato | Ocean-inspired theme |
-| `City-Rainy-Night.png` | Gruvbox | Retro green theme |
-| `Clearnight.jpg` | Nord | Cool blue theme |
-| `Cloudsnight.jpg` | Catppuccin Mocha | Warm mocha theme |
-| `dragon.png` | Gruvbox | Retro green theme |
-| `Fantasy-Lanscape-Night.png` | Catppuccin Macchiato | Ocean-inspired theme |
-| `Neon_Cities_4-C0750.jpg` | Catppuccin Mocha | Warm mocha theme |
+Wallpapers are now organized in themed folders for better management:
+
+```
+wallpapers/
+├── winter/     # Snow, ice, cold themes → Nord
+├── night/      # Dark, moon, evening themes → Catppuccin Mocha
+├── day/        # Bright, sun, light themes → Catppuccin Latte
+├── retro/      # Classic, vintage themes → Gruvbox
+└── special/    # Custom overrides
+```
+
+## Smart Pattern-Based Theming
+
+The system now automatically assigns themes based on filename patterns:
+
+| Pattern | Theme | Example |
+|---------|-------|---------|
+| `winter`, `snow`, `cold`, `ice` | Nord | `winter-landscape.png` |
+| `night`, `dark`, `moon`, `space` | Catppuccin Mocha | `night-city.png` |
+| `day`, `sun`, `bright`, `light` | Catppuccin Latte | `sunny-day.jpg` |
+| `retro`, `old`, `classic` | Gruvbox | `retro-game.png` |
+| `city`, `urban`, `neon` | Catppuccin Macchiato | `cyberpunk-city.png` |
+| `fantasy`, `magic` | Tokyo Night | `magical-forest.jpg` |
+| `dragon`, `mythical` | Everforest | `dragon-lair.png` |
+| `blood`, `gothic` | Dracula | `vampire-castle.jpg` |
+| `frappe`, `cool` | Catppuccin Frappe | `modern-frappe.png` |
+
+**Fallback**: Unmatched wallpapers get themes via round-robin assignment.
+
+## Available Themes
+
+| Theme | Description | Apps Supported |
+|-------|-------------|----------------|
+| Nord | Arctic blue theme | All |
+| Catppuccin Mocha | Warm dark theme | All |
+| Catppuccin Macchiato | Ocean-inspired | All |
+| Catppuccin Frappe | Cool modern | All |
+| Catppuccin Latte | Light & bright | All |
+| Gruvbox | Retro green | All |
+| Tokyo Night | Night-inspired | All |
+| Dracula | Gothic purple | All |
+| Everforest | Forest green | All |
 
 ## Usage
 
@@ -32,14 +63,41 @@ This system replaces the old automatic wallpaper switching with a manual toggle 
 
 ### Command Line
 ```bash
-# Toggle to next theme
+# Toggle to next wallpaper/theme combo
 ./scripts/wallpaper-toggle.sh toggle
 
-# Go to previous theme
+# Go to previous wallpaper/theme combo
 ./scripts/wallpaper-toggle.sh prev
 
-# Show current theme and available options
+# Show current status and all available wallpapers
 ./scripts/wallpaper-toggle.sh status
+```
+
+### Adding New Wallpapers
+
+1. **Drop wallpapers** into appropriate folders:
+   - `wallpapers/winter/` for cold/snow themes
+   - `wallpapers/night/` for dark/night themes
+   - `wallpapers/day/` for bright/light themes
+   - `wallpapers/retro/` for classic themes
+   - `wallpapers/special/` for custom overrides
+
+2. **Themes are assigned automatically** based on filename patterns
+
+3. **No manual configuration needed** - the system handles everything!
+
+### Examples
+```bash
+# Add winter wallpapers
+cp ~/Downloads/snow-mountain.jpg wallpapers/winter/
+cp ~/Downloads/ice-lake.png wallpapers/winter/
+
+# Add night wallpapers
+cp ~/Downloads/cyberpunk-night.jpg wallpapers/night/
+cp ~/Downloads/moonlight.png wallpapers/night/
+
+# System automatically assigns Nord theme to winter images
+# and Catppuccin Mocha to night images
 ```
 
 ## How It Works

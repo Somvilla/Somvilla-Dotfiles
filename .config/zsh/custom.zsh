@@ -13,7 +13,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
-[ -n "$STARSHIP_THEME" ] && starship config palette "$STARSHIP_THEME"
 
 # Git completion (Arch)
 if [ -f /usr/share/zsh/site-functions/git-completion.zsh ]; then

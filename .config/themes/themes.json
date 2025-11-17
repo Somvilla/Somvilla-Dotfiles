@@ -24,6 +24,22 @@
       "starship": "catppuccin_mocha",
       "kitty": "Catppuccin Macchiato"
     },
+    "catppuccin-frappe": {
+      "name": "Catppuccin Frappe",
+      "wezterm": "catppuccin",
+      "gtk": "Catppuccin-Frappe-Standard-Blue-Dark",
+      "waybar": "catppuccin-frappe",
+      "starship": "catppuccin_frappe",
+      "kitty": "Catppuccin Frappe"
+    },
+    "catppuccin-latte": {
+      "name": "Catppuccin Latte",
+      "wezterm": "catppuccin",
+      "gtk": "Catppuccin-Latte-Standard-Blue-Light",
+      "waybar": "catppuccin-latte",
+      "starship": "catppuccin_latte",
+      "kitty": "Catppuccin Latte"
+    },
     "gruvbox": {
       "name": "Gruvbox",
       "wezterm": "onedark",
@@ -31,6 +47,30 @@
       "waybar": "gruvbox",
       "starship": "gruvbox_dark",
       "kitty": "Gruvbox Dark"
+    },
+    "tokyo-night": {
+      "name": "Tokyo Night",
+      "wezterm": "tokyo-night",
+      "gtk": "Tokyonight-Dark",
+      "waybar": "tokyo-night",
+      "starship": "tokyo-night",
+      "kitty": "Tokyo Night"
+    },
+    "dracula": {
+      "name": "Dracula",
+      "wezterm": "dracula",
+      "gtk": "Dracula",
+      "waybar": "dracula",
+      "starship": "dracula",
+      "kitty": "Dracula"
+    },
+    "everforest": {
+      "name": "Everforest",
+      "wezterm": "everforest",
+      "gtk": "Everforest-Dark",
+      "waybar": "everforest",
+      "starship": "everforest",
+      "kitty": "Everforest Dark"
     }
   },
   "wallpaper_themes": {

@@ -14,34 +14,45 @@ WALLPAPER_DIR="$DOTFILES_DIR/wallpapers"
 # Ensure cache directory exists
 mkdir -p "$CACHE_DIR"
 
-# Simple JSON parsing functions (no jq dependency)
+# Get all wallpapers from organized folders
 get_wallpapers() {
-    # Hardcoded list for now - matches the JSON config
-    echo "winter-is-coming-1.png"
-    echo "winter-is-coming-2.png"
-    echo "City-Night.png"
-    echo "City-Rainy-Night.png"
-    echo "Clearnight.jpg"
-    echo "Cloudsnight.jpg"
-    echo "dragon.png"
-    echo "Fantasy-Lanscape-Night.png"
-    echo "Neon_Cities_4-C0750.jpg"
+    # Find all image files in wallpaper subdirectories
+    find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) | sort
 }
 
 get_theme_for_wallpaper() {
     local wallpaper="$1"
-    case "$wallpaper" in
-        "winter-is-coming-1.png") echo "nord" ;;
-        "winter-is-coming-2.png") echo "catppuccin-mocha" ;;
-        "City-Night.png") echo "catppuccin-macchiato" ;;
-        "City-Rainy-Night.png") echo "gruvbox" ;;
-        "Clearnight.jpg") echo "nord" ;;
-        "Cloudsnight.jpg") echo "catppuccin-mocha" ;;
-        "dragon.png") echo "gruvbox" ;;
-        "Fantasy-Lanscape-Night.png") echo "catppuccin-macchiato" ;;
-        "Neon_Cities_4-C0750.jpg") echo "catppuccin-mocha" ;;
-        *) echo "catppuccin-mocha" ;; # fallback
-    esac
+    local filename=$(basename "$wallpaper" .png)
+    filename=$(basename "$filename" .jpg)
+    filename=$(basename "$filename" .jpeg)
+
+    # Smart pattern-based theme assignment (order matters - more specific first)
+    if [[ "$filename" =~ (dragon|lair) ]]; then
+        echo "gruvbox"
+    elif [[ "$filename" =~ (fire|mythical) ]]; then
+        echo "everforest"
+    elif [[ "$filename" =~ (blood|vampire|gothic|castle) ]]; then
+        echo "dracula"
+    elif [[ "$filename" =~ (fantasy|magic|mystical|dream|forest) ]]; then
+        echo "tokyo-night"
+    elif [[ "$filename" =~ (winter|snow|cold|ice|arctic|frozen|polar) ]]; then
+        echo "nord"
+    elif [[ "$filename" =~ (retro|old|classic|vintage|pixel|8bit|game) ]]; then
+        echo "gruvbox"
+    elif [[ "$filename" =~ (neon|cyberpunk|cyber|synthwave) ]]; then
+        echo "catppuccin-macchiato"
+    elif [[ "$filename" =~ (night|dark|moon|space|midnight|evening|rainy|storm) ]]; then
+        echo "catppuccin-mocha"
+    elif [[ "$filename" =~ (day|sun|bright|light|morning|sunrise|sunset|dawn) ]]; then
+        echo "catppuccin-latte"
+    elif [[ "$filename" =~ (city|urban|street|building) ]]; then
+        echo "catppuccin-frappe"
+    else
+        # Round-robin fallback for unmatched wallpapers
+        local themes=("nord" "catppuccin-mocha" "catppuccin-macchiato" "catppuccin-frappe" "catppuccin-latte" "gruvbox" "tokyo-night" "dracula" "everforest")
+        local index=$(( $(echo "$filename" | cksum | cut -d' ' -f1) % ${#themes[@]} ))
+        echo "${themes[$index]}"
+    fi
 }
 
 get_theme_config() {
@@ -112,19 +123,15 @@ save_current_index() {
 
 # Apply wallpaper
 apply_wallpaper() {
-    local wallpaper="$1"
-    local wallpaper_path="$WALLPAPER_DIR/$wallpaper"
+    local wallpaper_path="$1"
 
-    # Check if wallpaper exists directly, or in winter/ subdirectory
     if [[ ! -f "$wallpaper_path" ]]; then
-        wallpaper_path="$WALLPAPER_DIR/winter/$wallpaper"
-        if [[ ! -f "$wallpaper_path" ]]; then
-            echo "Error: Wallpaper $wallpaper not found in $WALLPAPER_DIR or $WALLPAPER_DIR/winter/"
-            return 1
-        fi
+        echo "Error: Wallpaper $wallpaper_path not found"
+        return 1
     fi
 
-    echo "Applying wallpaper: $wallpaper"
+    local wallpaper_name=$(basename "$wallpaper_path")
+    echo "Applying wallpaper: $wallpaper_name"
     swww img "$wallpaper_path" --transition-type grow --transition-duration 1
 
     # Trigger WezTerm reload
@@ -153,7 +160,10 @@ apply_theme() {
     local waybar_css="$DOTFILES_DIR/.config/themes/waybar-$waybar_theme.css"
     if [[ -f "$waybar_css" ]]; then
         ln -sf "$waybar_css" "$DOTFILES_DIR/.config/waybar/theme.css"
-        pkill -RTMIN+1 waybar || true
+        # Kill and restart Waybar for immediate theme update
+        killall waybar 2>/dev/null || true
+        sleep 0.1
+        waybar &
     fi
 
     # GTK colors
@@ -165,7 +175,10 @@ apply_theme() {
 
     # Starship theme
     local starship_theme=$(get_theme_value "$theme_config" "starship")
-    export STARSHIP_THEME="$starship_theme"
+    # Update starship palette using dedicated script
+    if [[ -n "$starship_theme" ]]; then
+        "$DOTFILES_DIR/scripts/update_starship_palette.sh" "$starship_theme" 2>/dev/null || true
+    fi
 
     # Kitty theme (reload via signal)
     local kitty_theme=$(get_theme_value "$theme_config" "kitty")
@@ -181,14 +194,15 @@ toggle_wallpaper_theme() {
     local wallpapers=($(get_wallpapers))
     local current_index=$(get_current_index)
     local next_index=$(( (current_index + 1) % ${#wallpapers[@]} ))
-    local wallpaper="${wallpapers[$next_index]}"
-    local theme=$(get_theme_for_wallpaper "$wallpaper")
+    local wallpaper_path="${wallpapers[$next_index]}"
+    local wallpaper_name=$(basename "$wallpaper_path")
+    local theme=$(get_theme_for_wallpaper "$wallpaper_name")
     local theme_config=$(get_theme_config "$theme")
 
-    echo "Switching to: $wallpaper ($theme)"
+    echo "Switching to: $wallpaper_name ($theme)"
 
     # Apply wallpaper and theme
-    apply_wallpaper "$wallpaper"
+    apply_wallpaper "$wallpaper_path"
     apply_theme "$theme" "$theme_config"
 
     # Save state
@@ -196,7 +210,7 @@ toggle_wallpaper_theme() {
 
     # Send notification
     if command -v dunstify &> /dev/null; then
-        dunstify -a "Rice Toggle" -u low "Theme Changed" "Wallpaper: $wallpaper\nTheme: $theme"
+        dunstify -a "Rice Toggle" -u low "Theme Changed" "Wallpaper: $wallpaper_name\nTheme: $theme"
     fi
 }
 
@@ -204,15 +218,17 @@ toggle_wallpaper_theme() {
 show_status() {
     local wallpapers=($(get_wallpapers))
     local current_index=$(get_current_index)
-    local wallpaper="${wallpapers[$current_index]}"
-    local theme=$(get_theme_for_wallpaper "$wallpaper")
+    local wallpaper_path="${wallpapers[$current_index]}"
+    local wallpaper_name=$(basename "$wallpaper_path")
+    local theme=$(get_theme_for_wallpaper "$wallpaper_name")
 
-    echo "Current: $wallpaper ($theme)"
+    echo "Current: $wallpaper_name ($theme)"
     echo "Available wallpapers:"
     for i in "${!wallpapers[@]}"; do
         local marker=" "
         [[ $i -eq $current_index ]] && marker=">"
-        echo "  $marker ${wallpapers[$i]}"
+        local name=$(basename "${wallpapers[$i]}")
+        echo "  $marker $name"
     done
 }
 
