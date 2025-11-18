@@ -98,7 +98,7 @@ cp ~/Downloads/moonlight.png wallpapers/night/
 
 # System automatically assigns Nord theme to winter images
 # and Catppuccin Mocha to night images
-```
+v```
 
 ## How It Works
 

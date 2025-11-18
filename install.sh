@@ -13,10 +13,10 @@ cd ~/yay && makepkg -si --noconfirm
 cd ~ && rm -rf ~/yay
 
 echo "Installing required packages..."
-sudo pacman -S --needed stow hyprland waybar kitty fish starship rofi nemo nvim cava swaync wlogout wofi gtk3 gtk4 pavucontrol btop ollama git nodejs npm python
+sudo pacman -S --needed stow hyprland waybar kitty fish starship rofi nemo nvim cava swaync wofi gtk3 gtk4 pavucontrol btop ollama git nodejs npm python
 
 echo "Installing AMD gaming packages..."
-yay -S --noconfirm proton-ge-custom mangohud vkbasalt lutris wine dxvk lib32-vulkan-mesa-layers
+yay -S --noconfirm proton-ge-custom mangohud vkbasalt lutris wine dxvk lib32-vulkan-mesa-layers wlogout
 
 echo "Installing OpenCode..."
 curl -fsSL https://opencode.ai/install | bash
