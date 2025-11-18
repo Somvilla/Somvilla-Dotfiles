@@ -6,11 +6,13 @@ echo "Backing up existing configs..."
 mkdir -p ~/config_backup
 cp -r ~/.config/* ~/config_backup/ 2>/dev/null || true
 
-echo "Installing base system packages..."
-sudo pacman -S --needed git base-devel xorg-xwayland xorg-server mesa vulkan-icd-loader
+echo "Caching sudo credentials..."
+sudo -v
+# Keep sudo credentials alive in background
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-echo "Installing display manager..."
-sudo pacman -S --needed sddm
+echo "Installing base system packages and display manager..."
+sudo pacman -S --needed git base-devel xorg-xwayland xorg-server mesa vulkan-icd-loader sddm
 
 echo "Installing yay (AUR helper)..."
 git clone https://aur.archlinux.org/yay.git ~/yay
@@ -18,7 +20,7 @@ cd ~/yay && makepkg -si --noconfirm
 cd ~ && rm -rf ~/yay
 
 echo "Installing Hyprland and desktop packages..."
-sudo pacman -S --needed stow hyprland waybar kitty fish starship rofi nemo nvim cava swaync wofi gtk3 gtk4 pavucontrol btop ollama git nodejs npm python swww ulauncher
+sudo pacman -S --needed stow hyprland waybar kitty fish starship rofi nemo nvim cava swaync wofi gtk3 gtk4 pavucontrol btop ollama nodejs npm python swww ulauncher
 
 echo "Installing AMD gaming packages..."
 yay -S --noconfirm proton-ge-custom mangohud vkbasalt lutris wine dxvk lib32-vulkan-mesa-layers wlogout
@@ -27,13 +29,13 @@ echo "Installing OpenCode..."
 curl -fsSL https://opencode.ai/install | bash
 
 echo "Creating Hyprland session file..."
-sudo tee /usr/share/wayland-sessions/hyprland.desktop > /dev/null <<EOF
+sudo bash -c "cat > /usr/share/wayland-sessions/hyprland.desktop <<EOF
 [Desktop Entry]
 Name=Hyprland
 Comment=An intelligent dynamic tiling Wayland compositor
 Exec=/home/$USER/dotfiles/scripts/start-hyprland.sh
 Type=Application
-EOF
+EOF"
 
 echo "Creating Hyprland startup script..."
 cat > ~/dotfiles/scripts/start-hyprland.sh <<EOF
