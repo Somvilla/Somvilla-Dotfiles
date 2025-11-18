@@ -115,7 +115,13 @@ If you prefer manual setup:
 To test on a fresh Arch VM:
 1. Install base packages: `pacman -S git stow`
 2. Clone: `git clone <your-repo-url> ~/dotfiles`
-3. Run: `cd ~/dotfiles && ./setup_stow.sh`
-4. Reboot and verify Hyprland starts
+3. Run: `cd ~/dotfiles && ./install.sh`
+4. Reboot and verify Hyprland starts with SDDM login screen
+
+**VM Graphics Setup:**
+- **Virt-Manager/virt-manager**: Enable SPICE display in VM settings
+- **VirtualBox**: Enable VRDP server or use GUI mode
+- **VMware**: Use VM console with graphics enabled
+- **Generic**: Ensure VM has graphics acceleration and sufficient VRAM
 
 Enjoy your customized Hyprland setup!

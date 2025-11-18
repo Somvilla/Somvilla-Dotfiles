@@ -26,6 +26,11 @@ export PATH=/home/gary/.opencode/bin:$PATH
 HISTTIMEFORMAT="%F %T "
 HISTCONTROL=ignoredups
 
+# Directories
+
+alias dev='cd ~/dev'
+alias dot='cd ~/dotfiles'
+
 # Reload bashrc quickly
 alias reload='source ~/.bashrc'
 
@@ -44,9 +49,10 @@ alias gcf='git commit -m "Initial commit"'
 alias gp='git push'
 alias gl='git log --oneline --graph --decorate --all'
 
-# OpenCode helpers
-alias ai="opencode"
+# OpenCode / AI helpers
+alias oc="opencode"
 alias op="opencode --project $(basename $PWD)"
+alias ai="ollama run gemma3:4b"
 # IP, network info
 alias myip='ip -br a'
 alias ports='sudo lsof -i -P -n | grep LISTEN'
