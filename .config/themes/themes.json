@@ -1,77 +1,86 @@
 {
   "themes": {
-    "nord": {
-      "name": "Nord",
-      "wezterm": "nord",
-      "gtk": "Nordic",
-      "waybar": "nord",
-      "starship": "nord",
-      "kitty": "Nord"
-    },
-    "catppuccin-mocha": {
-      "name": "Catppuccin Mocha",
-      "wezterm": "catppuccin",
-      "gtk": "Catppuccin-Mocha-Standard-Blue-Dark",
-      "waybar": "catppuccin-mocha",
-      "starship": "catppuccin_mocha",
-      "kitty": "Catppuccin Mocha"
-    },
-    "catppuccin-macchiato": {
-      "name": "Catppuccin Macchiato",
-      "wezterm": "catppuccin",
-      "gtk": "Catppuccin-Macchiato-Standard-Blue-Dark",
-      "waybar": "catppuccin-macchiato",
-      "starship": "catppuccin_mocha",
-      "kitty": "Catppuccin Macchiato"
-    },
-    "catppuccin-frappe": {
-      "name": "Catppuccin Frappe",
-      "wezterm": "catppuccin",
-      "gtk": "Catppuccin-Frappe-Standard-Blue-Dark",
-      "waybar": "catppuccin-frappe",
-      "starship": "catppuccin_frappe",
-      "kitty": "Catppuccin Frappe"
-    },
-    "catppuccin-latte": {
-      "name": "Catppuccin Latte",
-      "wezterm": "catppuccin",
-      "gtk": "Catppuccin-Latte-Standard-Blue-Light",
-      "waybar": "catppuccin-latte",
-      "starship": "catppuccin_latte",
-      "kitty": "Catppuccin Latte"
-    },
-    "gruvbox": {
-      "name": "Gruvbox",
-      "wezterm": "onedark",
-      "gtk": "Gruvbox-Dark",
-      "waybar": "gruvbox",
-      "starship": "gruvbox_dark",
-      "kitty": "Gruvbox Dark"
-    },
-    "tokyo-night": {
-      "name": "Tokyo Night",
-      "wezterm": "tokyo-night",
-      "gtk": "Tokyonight-Dark",
-      "waybar": "tokyo-night",
-      "starship": "tokyo-night",
-      "kitty": "Tokyo Night"
-    },
-    "dracula": {
-      "name": "Dracula",
-      "wezterm": "dracula",
-      "gtk": "Dracula",
-      "waybar": "dracula",
-      "starship": "dracula",
-      "kitty": "Dracula"
-    },
-    "everforest": {
-      "name": "Everforest",
-      "wezterm": "everforest",
-      "gtk": "Everforest-Dark",
-      "waybar": "everforest",
-      "starship": "everforest",
-      "kitty": "Everforest Dark"
-    }
+     "nord": {
+       "name": "Nord",
+       "wezterm": "nord",
+       "gtk": "Nordic",
+       "waybar": "nord",
+       "starship": "nord",
+       "kitty": "Nord",
+       "sddm": "nord"
+     },
+     "catppuccin-mocha": {
+       "name": "Catppuccin Mocha",
+       "wezterm": "catppuccin",
+       "gtk": "Catppuccin-Mocha-Standard-Blue-Dark",
+       "waybar": "catppuccin-mocha",
+       "starship": "catppuccin_mocha",
+       "kitty": "Catppuccin Mocha",
+       "sddm": "catppuccin-mocha"
+     },
+     "catppuccin-macchiato": {
+       "name": "Catppuccin Macchiato",
+       "wezterm": "catppuccin",
+       "gtk": "Catppuccin-Macchiato-Standard-Blue-Dark",
+       "waybar": "catppuccin-macchiato",
+       "starship": "catppuccin_mocha",
+       "kitty": "Catppuccin Macchiato",
+       "sddm": "catppuccin-macchiato"
+     },
+     "catppuccin-frappe": {
+       "name": "Catppuccin Frappe",
+       "wezterm": "catppuccin",
+       "gtk": "Catppuccin-Frappe-Standard-Blue-Dark",
+       "waybar": "catppuccin-frappe",
+       "starship": "catppuccin_frappe",
+       "kitty": "Catppuccin Frappe",
+       "sddm": "catppuccin-frappe"
+     },
+     "catppuccin-latte": {
+       "name": "Catppuccin Latte",
+       "wezterm": "catppuccin",
+       "gtk": "Catppuccin-Latte-Standard-Blue-Light",
+       "waybar": "catppuccin-latte",
+       "starship": "catppuccin_latte",
+       "kitty": "Catppuccin Latte",
+       "sddm": "catppuccin-latte"
+     },
+     "gruvbox": {
+       "name": "Gruvbox",
+       "wezterm": "onedark",
+       "gtk": "Gruvbox-Dark",
+       "waybar": "gruvbox",
+       "starship": "gruvbox_dark",
+       "kitty": "Gruvbox Dark",
+       "sddm": "gruvbox"
+     },
+     "tokyo-night": {
+       "name": "Tokyo Night",
+       "wezterm": "tokyo-night",
+       "gtk": "Tokyonight-Dark",
+       "waybar": "tokyo-night",
+       "starship": "tokyo-night",
+       "kitty": "Tokyo Night",
+       "sddm": "tokyo-night"
+     },
+     "dracula": {
+       "name": "Dracula",
+       "wezterm": "dracula",
+       "gtk": "Dracula",
+       "waybar": "dracula",
+       "starship": "dracula",
+       "kitty": "Dracula",
+       "sddm": "dracula"
+     },
+     "everforest": {
+       "name": "Everforest",
+       "wezterm": "everforest",
+       "gtk": "Everforest-Dark",
+       "waybar": "everforest",
+       "starship": "everforest",
+       "kitty": "Everforest Dark",
+       "sddm": "everforest"
+     }
   },
   "wallpaper_themes": {
     "winter-is-coming-1.png": "nord",
