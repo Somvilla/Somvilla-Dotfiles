@@ -94,4 +94,4 @@ else
     class="disconnected"
 fi
 
-printf '{"text":"%s VPN","tooltip":"%s","alt":"%s","class":["wireguard","%s"]}\n' "$icon" "$tooltip" "$alt" "$class"
+printf '{"text":"%s","tooltip":"%s","alt":"%s","class":["wireguard","%s"]}\n' "$icon" "$tooltip" "$alt" "$class"

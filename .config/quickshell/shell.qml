@@ -11,12 +11,12 @@ Variants {
     screen: modelData
 
     anchors {
-      top: true
       left: true
-      right: true
+      top: true
+      bottom: true
     }
 
-    implicitHeight: 35
+    implicitWidth: 35
     color: "transparent"
     margins {
       top: 0
@@ -30,55 +30,119 @@ Variants {
       color: Qt.rgba(0.24, 0.27, 0.36, 0.55) // rgba(36, 39, 58, 0.55)
       radius: 0
 
-      // Left section - Workspaces
-      Workspaces {
-        anchors {
-          left: parent.left
-          leftMargin: 10
-          verticalCenter: parent.verticalCenter
-        }
-      }
+       ColumnLayout {
+         anchors.fill: parent
+         anchors.topMargin: 5
+         anchors.bottomMargin: 5
+         spacing: 0
 
-      // Center section - Clock
-      Clock {
-        anchors.centerIn: parent
-      }
+         // Top - Workspaces
+         Column {
+           Layout.fillWidth: true
+           spacing: 0
 
-      // Right section - System modules
-      Row {
-        anchors {
-          right: parent.right
-          rightMargin: 5
-          verticalCenter: parent.verticalCenter
-        }
-        spacing: 0
+           Rectangle {
+             width: parent.width
+             height: 1
+             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+           }
 
-        // Theme toggle
-        ThemeToggle {}
+           Item {
+             width: parent.width
+             height: workspaces.height + 10
 
-        // Notification
-        NotificationModule {}
+             Workspaces {
+               id: workspaces
+               width: parent.width
+               anchors.centerIn: parent
+             }
+           }
 
-        // WireGuard
-        WireGuardModule {}
+           Rectangle {
+             width: parent.width
+             height: 1
+             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+           }
+         }
 
-        // CPU
-        CpuModule {}
+         // Spacer top
+         Item { Layout.fillHeight: true }
 
-        // Memory
-        MemoryModule {}
+         // Clock
+         Column {
+           Layout.fillWidth: true
+           spacing: 0
 
-        // GPU
-        GpuModule {}
+           Rectangle {
+             width: parent.width
+             height: 1
+             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+           }
 
-        // Updates
-        UpdatesModule {}
+           Item {
+             width: parent.width
+             height: clock.height + 10
 
-        // Volume
-        VolumeModule {}
+             Clock {
+               id: clock
+               width: parent.width
+               anchors.centerIn: parent
+             }
+           }
 
-        // Power
-        PowerModule {}
+           Rectangle {
+             width: parent.width
+             height: 1
+             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+           }
+         }
+
+         // Spacer bottom
+         Item { Layout.fillHeight: true }
+
+         // Bottom modules
+         Column {
+           Layout.fillWidth: true
+           spacing: 0
+
+           Rectangle {
+             width: parent.width
+             height: 1
+             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+           }
+
+           Item {
+             width: parent.width
+             height: bottomColumn.height + 8
+
+             Column {
+               id: bottomColumn
+               spacing: 12
+               width: parent.width
+               anchors.centerIn: parent
+
+               NetworkModule {}
+               WireGuardModule {}
+               UpdatesModule {}
+               NotificationModule {}
+               ThemeToggle {}
+
+               Rectangle {
+                 width: parent.width
+                 height: 1
+                 color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+               }
+
+               PowerModule {}
+             }
+           }
+
+           Rectangle {
+             width: parent.width
+             height: 1
+             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
+           }
+         }
       }
     }
   }

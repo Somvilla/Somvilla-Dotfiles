@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell.Io
 
 Text {
+  width: parent.width
   Process {
     id: notificationProcess
     property string notificationIcon: ""
@@ -28,8 +29,8 @@ Text {
   color: "#ecd3a0" // text color
   font.family: "NotoSansMono Nerd Font"
   font.pixelSize: 16
-  leftPadding: 10
-  rightPadding: 10
+  horizontalAlignment: Text.AlignHCenter
+  verticalAlignment: Text.AlignVCenter
 
   MouseArea {
     anchors.fill: parent

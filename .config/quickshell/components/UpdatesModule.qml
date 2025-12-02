@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell.Io
 
 Text {
+  width: parent.width
   Process {
     id: updatesProcess
     property string updateCount: "0"
@@ -24,12 +25,12 @@ Text {
     onTriggered: updatesProcess.running = true
   }
 
-  text: "📦 " + updatesProcess.updateCount
+  text: "📦"
   color: "#f5a97f" // peach
   font.family: "JetBrainsMono Nerd Font"
   font.pixelSize: 16
-  leftPadding: 10
-  rightPadding: 10
+  horizontalAlignment: Text.AlignHCenter
+  verticalAlignment: Text.AlignVCenter
 
   MouseArea {
     anchors.fill: parent

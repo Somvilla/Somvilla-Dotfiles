@@ -2,13 +2,14 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
 
-Row {
-  spacing: 4
+Column {
+  spacing: 2
 
   Repeater {
     model: Hyprland.workspaces
 
     delegate: Text {
+      width: parent.width
       required property HyprlandWorkspace modelData
 
       text: {
@@ -30,8 +31,8 @@ Row {
       font.family: "JetBrainsMono Nerd Font"
       font.pixelSize: 14
       font.weight: Font.Medium
-      leftPadding: 6
-      rightPadding: 6
+      horizontalAlignment: Text.AlignHCenter
+      verticalAlignment: Text.AlignVCenter
       topPadding: 2
       bottomPadding: 2
 

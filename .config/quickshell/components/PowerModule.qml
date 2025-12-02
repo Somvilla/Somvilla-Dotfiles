@@ -1,12 +1,13 @@
 import QtQuick
 
 Text {
+  width: parent.width
   text: "  "
   color: "#f38ba8" // red
   font.family: "JetBrainsMono Nerd Font"
   font.pixelSize: 16
-  leftPadding: 10
-  rightPadding: 10
+  horizontalAlignment: Text.AlignHCenter
+  verticalAlignment: Text.AlignVCenter
 
   MouseArea {
     anchors.fill: parent

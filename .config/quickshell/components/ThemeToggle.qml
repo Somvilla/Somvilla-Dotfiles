@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell.Io
 
 Text {
+  width: parent.width
   Process {
     id: themeProcess
     property string themeName: "Theme"
@@ -22,12 +23,12 @@ Text {
     onTriggered: themeProcess.running = true
   }
 
-  text: "🎨 " + themeProcess.themeName
+  text: "🎨"
   color: "#b7bdf8" // lavender
   font.family: "JetBrainsMono Nerd Font"
   font.pixelSize: 16
-  leftPadding: 10
-  rightPadding: 10
+  horizontalAlignment: Text.AlignHCenter
+  verticalAlignment: Text.AlignVCenter
 
   MouseArea {
     anchors.fill: parent
