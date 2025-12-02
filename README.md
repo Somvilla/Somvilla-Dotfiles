@@ -41,12 +41,41 @@ A collection of my personal Linux dotfiles for Hyprland and related tools. Uses 
 - **Logout Menu**: Wlogout
 - **App Launcher**: Wofi
 - **Themes**: GTK 3/4 themes and decorations
-- **Scripts**: Automation scripts for wallpapers, global control, etc.
+ - **Scripts**: Automation scripts for wallpapers, global control, timer, etc.
 - **Wallpapers**: Custom background images
-- **Other**: Pavucontrol settings, btop config, bashrc
-- **Gaming**: AMD GPU support with Proton, MangoHud, Lutris, Wine, DXVK
+ - **Other**: Pavucontrol settings, btop config, bashrc
+ - **Gaming**: AMD GPU support with Proton, MangoHud, Lutris, Wine, DXVK
 
-## Stow Workflow
+ ## Timer
+
+ A custom countdown timer script with desktop notifications and convenient keybindings.
+
+ ### Keybindings
+
+ - **Super+Shift+T**: Interactive timer (prompts for custom time)
+ - **Super+Ctrl+T**: 5-minute quick break timer
+ - **Super+Alt+T**: 25-minute pomodoro work session
+
+ ### Usage
+
+ ```bash
+ # Use keybindings above, or run directly:
+ ./scripts/timer.sh 5m "Break time"        # 5 minute timer
+ ./scripts/timer.sh 30s                   # 30 second timer
+ ./scripts/timer.sh 1h30m "Meeting"       # 1 hour 30 minutes
+ ./scripts/timer.sh 90                    # 90 seconds
+ ```
+
+ ### Features
+
+ - Visual countdown in terminal
+ - Desktop notifications when finished
+ - Sound alerts (if available)
+ - Background execution support
+ - Multiple time formats supported
+ - Convenient keybindings for common durations
+
+ ## Stow Workflow
 
 This repository uses GNU Stow for configuration management:
 
