@@ -50,7 +50,7 @@ get_theme_for_wallpaper() {
     else
         # Round-robin fallback for unmatched wallpapers
         local themes=("nord" "catppuccin-mocha" "catppuccin-macchiato" "catppuccin-frappe" "catppuccin-latte" "gruvbox" "tokyo-night" "dracula" "everforest")
-        local index=$(( $(echo "$filename" | cksum | cut -d' ' -f1) % ${#themes[@]} ))
+        local index=$(($(echo "$filename" | cksum | cut -d' ' -f1) % ${#themes[@]}))
         echo "${themes[$index]}"
     fi
 }
@@ -58,8 +58,8 @@ get_theme_for_wallpaper() {
 get_theme_config() {
     local theme="$1"
     case "$theme" in
-        "nord")
-            cat << 'EOF'
+    "nord")
+        cat <<'EOF'
 "name": "Nord",
 "wezterm": "nord",
 "gtk": "Nordic",
@@ -67,9 +67,9 @@ get_theme_config() {
 "starship": "nord",
 "kitty": "Nord"
 EOF
-            ;;
-        "catppuccin-mocha")
-            cat << 'EOF'
+        ;;
+    "catppuccin-mocha")
+        cat <<'EOF'
 "name": "Catppuccin Mocha",
 "wezterm": "catppuccin",
 "gtk": "Catppuccin-Mocha-Standard-Blue-Dark",
@@ -77,9 +77,9 @@ EOF
 "starship": "catppuccin_mocha",
 "kitty": "Catppuccin Mocha"
 EOF
-            ;;
-        "catppuccin-macchiato")
-            cat << 'EOF'
+        ;;
+    "catppuccin-macchiato")
+        cat <<'EOF'
 "name": "Catppuccin Macchiato",
 "wezterm": "catppuccin",
 "gtk": "Catppuccin-Macchiato-Standard-Blue-Dark",
@@ -87,9 +87,9 @@ EOF
 "starship": "catppuccin_mocha",
 "kitty": "Catppuccin Macchiato"
 EOF
-            ;;
-        "gruvbox")
-            cat << 'EOF'
+        ;;
+    "gruvbox")
+        cat <<'EOF'
 "name": "Gruvbox",
 "wezterm": "onedark",
 "gtk": "Gruvbox-Dark",
@@ -97,7 +97,7 @@ EOF
 "starship": "gruvbox_dark",
 "kitty": "Gruvbox Dark"
 EOF
-            ;;
+        ;;
     esac
 }
 
@@ -118,7 +118,7 @@ get_current_index() {
 
 # Save current wallpaper index
 save_current_index() {
-    echo "$1" > "$CURRENT_STATE_FILE"
+    echo "$1" >"$CURRENT_STATE_FILE"
 }
 
 # Apply wallpaper
@@ -151,21 +151,21 @@ apply_theme() {
 
     # GTK theme
     local gtk_theme=$(get_theme_value "$theme_config" "gtk")
-    if command -v gsettings &> /dev/null; then
+    if command -v gsettings &>/dev/null; then
         gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme" 2>/dev/null || true
     fi
 
     # Waybar theme
-    local waybar_theme=$(get_theme_value "$theme_config" "waybar")
-    local waybar_css="$DOTFILES_DIR/.config/themes/waybar-$waybar_theme.css"
-    if [[ -f "$waybar_css" ]]; then
-        ln -sf "$waybar_css" "$DOTFILES_DIR/.config/waybar/theme.css"
-        # Kill and restart Waybar for immediate theme update
-        killall waybar 2>/dev/null || true
-        sleep 0.1
-        waybar &
-    fi
-
+    # local waybar_theme=$(get_theme_value "$theme_config" "waybar")
+    # local waybar_css="$DOTFILES_DIR/.config/themes/waybar-$waybar_theme.css"
+    # if [[ -f "$waybar_css" ]]; then
+    #     ln -sf "$waybar_css" "$DOTFILES_DIR/.config/waybar/theme.css"
+    #     # Kill and restart Waybar for immediate theme update
+    #     killall waybar 2>/dev/null || true
+    #     sleep 0.1
+    #     waybar &
+    # fi
+    #
     # GTK colors
     local gtk_css="$DOTFILES_DIR/.config/themes/gtk-$waybar_theme.css"
     if [[ -f "$gtk_css" ]]; then
@@ -193,7 +193,7 @@ apply_theme() {
 toggle_wallpaper_theme() {
     local wallpapers=($(get_wallpapers))
     local current_index=$(get_current_index)
-    local next_index=$(( (current_index + 1) % ${#wallpapers[@]} ))
+    local next_index=$(((current_index + 1) % ${#wallpapers[@]}))
     local wallpaper_path="${wallpapers[$next_index]}"
     local wallpaper_name=$(basename "$wallpaper_path")
     local theme=$(get_theme_for_wallpaper "$wallpaper_name")
@@ -209,7 +209,7 @@ toggle_wallpaper_theme() {
     save_current_index "$next_index"
 
     # Send notification
-    if command -v dunstify &> /dev/null; then
+    if command -v dunstify &>/dev/null; then
         dunstify -a "Rice Toggle" -u low "Theme Changed" "Wallpaper: $wallpaper_name\nTheme: $theme"
     fi
 }
@@ -234,29 +234,29 @@ show_status() {
 
 # Parse arguments
 case "${1:-toggle}" in
-    "toggle")
-        toggle_wallpaper_theme
-        ;;
-    "status")
-        show_status
-        ;;
-    "next")
-        toggle_wallpaper_theme
-        ;;
-    "prev")
-        # Go backwards
-        local wallpapers=($(get_wallpapers))
-        local current_index=$(get_current_index)
-        local prev_index=$(( current_index == 0 ? ${#wallpapers[@]} - 1 : current_index - 1 ))
-        save_current_index "$prev_index"
-        toggle_wallpaper_theme
-        ;;
-    *)
-        echo "Usage: $0 [toggle|status|next|prev]"
-        echo "  toggle: Switch to next wallpaper/theme (default)"
-        echo "  status: Show current wallpaper/theme"
-        echo "  next: Same as toggle"
-        echo "  prev: Switch to previous wallpaper/theme"
-        exit 1
-        ;;
+"toggle")
+    toggle_wallpaper_theme
+    ;;
+"status")
+    show_status
+    ;;
+"next")
+    toggle_wallpaper_theme
+    ;;
+"prev")
+    # Go backwards
+    local wallpapers=($(get_wallpapers))
+    local current_index=$(get_current_index)
+    local prev_index=$((current_index == 0 ? ${#wallpapers[@]} - 1 : current_index - 1))
+    save_current_index "$prev_index"
+    toggle_wallpaper_theme
+    ;;
+*)
+    echo "Usage: $0 [toggle|status|next|prev]"
+    echo "  toggle: Switch to next wallpaper/theme (default)"
+    echo "  status: Show current wallpaper/theme"
+    echo "  next: Same as toggle"
+    echo "  prev: Switch to previous wallpaper/theme"
+    exit 1
+    ;;
 esac

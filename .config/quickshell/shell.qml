@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 import "components"
@@ -17,6 +18,7 @@ Variants {
     }
 
     implicitWidth: 35
+    visible: !Hyprland.focusedWorkspace?.hasFullscreen ?? true
     color: "transparent"
     margins {
       top: 0
@@ -36,16 +38,10 @@ Variants {
          anchors.bottomMargin: 5
          spacing: 0
 
-         // Top - Workspaces
-         Column {
-           Layout.fillWidth: true
-           spacing: 0
-
-           Rectangle {
-             width: parent.width
-             height: 1
-             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
-           }
+          // Top - Workspaces
+          Column {
+            Layout.fillWidth: true
+            spacing: 0
 
            Item {
              width: parent.width
@@ -133,16 +129,10 @@ Variants {
                  color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
                }
 
-               PowerModule {}
-             }
-           }
-
-           Rectangle {
-             width: parent.width
-             height: 1
-             color: Qt.rgba(0.5, 0.5, 0.5, 0.3)
-           }
-         }
+                PowerModule {}
+              }
+            }
+          }
       }
     }
   }

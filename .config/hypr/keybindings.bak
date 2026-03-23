@@ -40,7 +40,6 @@ $WS_OBSIDIAN=10
 
 # ----- Jump to workspaces (Super + letter) -----
 bind = $mainMod, T, workspace, $WS_MAIN
-bind = $mainMod, A, workspace, $WS_MAIN
 bind = $mainMod, C, workspace, $WS_CODE
 bind = $mainMod, F, workspace, $WS_WEB
 bind = $mainMod, Q, workspace, $WS_WEB
@@ -54,7 +53,6 @@ bind = $mainMod, O, workspace, $WS_OBSIDIAN
 
 # ----- Send window (stay on current desk): Super + Alt + letter -----
 bind = $mainMod $altMod, T, movetoworkspace, $WS_MAIN
-bind = $mainMod $altMod, A, movetoworkspace, $WS_MAIN
 bind = $mainMod $altMod, C, movetoworkspace, $WS_CODE
 bind = $mainMod $altMod, F, movetoworkspace, $WS_WEB
 bind = $mainMod $altMod, Q, movetoworkspace, $WS_WEB
@@ -68,7 +66,6 @@ bind = $mainMod $altMod, O, movetoworkspace, $WS_OBSIDIAN
 
 # ----- Send + follow (one key does both): Super + Shift + letter -----
 bind = $mainMod SHIFT, T, exec, hyprctl dispatch movetoworkspace $WS_MAIN;     hyprctl dispatch workspace $WS_MAIN
-bind = $mainMod SHIFT, A, exec, hyprctl dispatch movetoworkspace $WS_MAIN;     hyprctl dispatch workspace $WS_MAIN
 bind = $mainMod SHIFT, C, exec, hyprctl dispatch movetoworkspace $WS_CODE;     hyprctl dispatch workspace $WS_CODE
 bind = $mainMod SHIFT, F, exec, hyprctl dispatch movetoworkspace $WS_WEB;      hyprctl dispatch workspace $WS_WEB
 bind = $mainMod SHIFT, Q, exec, hyprctl dispatch movetoworkspace $WS_WEB;      hyprctl dispatch workspace $WS_WEB
@@ -141,5 +138,5 @@ bindl = , XF86AudioPause, exec, playerctl play-pause
 bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
 
-bind = $mainMod, Print, exec, grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of the region taken" -t 1000 # screenshot of a region 
+bind = $altMod SHIFT, A, exec, grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of the region taken" -t 1000 # screenshot of a region 
 
